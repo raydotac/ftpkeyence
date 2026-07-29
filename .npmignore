@@ -1,0 +1,7 @@
+src/
+dist/**/*.map
+dist/**/*.d.ts.map
+tsconfig.json
+.npmignore
+node_modules/
+*.tgz

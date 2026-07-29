@@ -1,0 +1,51 @@
+{
+  "name": "@raydotac/ftpkeyence",
+  "version": "1.0.0",
+  "description": "FTP client for Keyence VS series vision cameras. Supports list, download, upload, remove — file and folder — with TypeScript types.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "bin": {
+    "ftpkeyence": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "keyence",
+    "vs-series",
+    "ftp",
+    "vision",
+    "camera",
+    "automation",
+    "industrial",
+    "typescript"
+  ],
+  "author": "raydotac",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raydotac/ftpkeyence.git"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "basic-ftp": "^5.0.5"
+  },
+  "devDependencies": {
+    "@raydotac/ftpkeyence": "^1.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "5.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
