@@ -202,6 +202,20 @@ export class FtpKeyence {
   }
 
   /**
+   * Create a remote directory (MKD). Silently ignores if it already exists.
+   * @param remotePath - Remote directory path to create
+   */
+  async mkdir(remotePath: string): Promise<void> {
+    if (!this.client) throw new Error("Not connected");
+    try {
+      await this.client.send(`MKD ${remotePath}`);
+    } catch (e: any) {
+      // 550 = already exists — safe to ignore
+      if (!String(e?.message ?? "").includes("550")) throw e;
+    }
+  }
+
+  /**
    * Get the client's basic-ftp instance (for advanced usage)
    */
   getClient(): ftp.Client | null {
